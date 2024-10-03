@@ -17,7 +17,7 @@ url = 'https://www.reddit.com/login/'
 
 # Truy cập
 driver.get(url)
-time.sleep(3)
+time.sleep(6)
 
 # Nhap thong tin nguoi dung
 my_email = input('Please provide your email:')
@@ -38,10 +38,11 @@ time.sleep(5)
 # Truy cap trang post bai
 url2 = 'https://www.reddit.com/r/funny/submit/?type=TEXT'
 driver.get(url2)
-time.sleep(2)
+time.sleep(5)
 
-for i in range(19):
+for i in range(17):
     actionChains.key_down(Keys.TAB).perform()
+    time.sleep(1)
 
 actionChains.send_keys('Vi du post').perform()
 
