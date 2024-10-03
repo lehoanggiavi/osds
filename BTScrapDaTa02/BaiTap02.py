@@ -10,7 +10,7 @@ import pandas as pd
 
 
 
-gecko_path = "E:/CaoDuLieu/CaoDaTa2/geckodriver.exe"
+gecko_path = "E:\OSDS\osds\BTScrapDaTa02\geckodriver.exe"
 # Khởi tởi đối tượng dịch vụ với đường geckodriver
 ser = Service(gecko_path)
 
