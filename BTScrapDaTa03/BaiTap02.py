@@ -29,7 +29,11 @@ links = [tag.find_element(By.TAG_NAME, "a").get_attribute("href")for tag in tags
 titles = [tag.find_element(By.TAG_NAME, "a").get_attribute("title")for tag in tags_li]
 
 for link in links:
-    print(link)
+    driver.get(link)
+time.sleep(3)
+driver.quit()
 
-for title in titles:
-    print(title)
+    # print(link)
+
+# for title in titles:
+#     print(title)

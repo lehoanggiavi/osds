@@ -16,7 +16,6 @@ for i in range(65, 91):
     driver = webdriver.Chrome()
     url = "https://en.wikipedia.org/wiki/List_of_painters_by_name_beginning_with_%22" + chr(i) + "%22"
     try:
-
         # Mở trang
         driver.get(url)
 

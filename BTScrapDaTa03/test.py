@@ -3,8 +3,8 @@ from selenium.webdriver.common.by import By
 import time
 import pandas as pd
 
-d = pd.DataFrame({"Name": [], "Year active": []})
 
+"Khoi tao web"
 driver = webdriver.Chrome()
 
 url = "https://en.wikipedia.org/wiki/The_13th_Floor_Elevators"
@@ -12,9 +12,15 @@ driver.get(url)
 
 time.sleep(3)
 
+
+d = pd.DataFrame({"Name": [], "Year active": []})
 "Lay ten"
-
-
+try:
+    # Name_element = driver.find_element(By.XPATH, "//h1[span[text()]]")
+    Name_element = driver.find_element(By.XPATH, "//h1[@id='firstHeading']//span[@class='mw-page-title-main']")
+    Name = Name_element.text
+except:
+    ""
 
 "Lay ngay hoat dong"
 try:
@@ -26,10 +32,10 @@ except:
 
 "Tao dictionary thong tin nhac si"
 
-musician_dict = {"Year active": YearActive}
+musician_dict = {"Name": Name, "Year active": YearActive}
 print(musician_dict)
 musician_df = pd.DataFrame([musician_dict])
-print(musician_df)
+# print(musician_df)
 
 
 "Them thong tin vao dataframe"
