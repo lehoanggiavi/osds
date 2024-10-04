@@ -23,7 +23,6 @@ WebDriverWait
 # tags_a = driver.find_elements(By.XPATH, "//a[contains(@title, 'List of painters')]")
 tags_a = driver.find_elements(By.XPATH, "//a[starts-with(@title, 'List of painters')]")
 
-
 "Tao ra danh sach lien ket"
 links = [tag.get_attribute("href") for tag in tags_a]
 

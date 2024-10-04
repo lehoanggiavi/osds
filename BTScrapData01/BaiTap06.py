@@ -46,13 +46,8 @@ for i in range(65, 91):
 
 ######################################################
 # III. Lay thong tin cua tung hoa si
-# print(all_links)
-# print(len(all_links))
-# count = 0
+
 for link in all_links:
-    # if count > 2:
-    #     break
-    # count = count+1
     print(link)
 
     try:

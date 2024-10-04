@@ -46,6 +46,7 @@ except:
 "Tao dictionary thong tin hoa si"
 
 painter = {'name': name, 'birth': birth, 'death': death, 'nationality': nationality}
+print(painter)
 painter_df = pd.DataFrame([painter])
 
 
