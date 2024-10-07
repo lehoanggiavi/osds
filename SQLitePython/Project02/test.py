@@ -107,8 +107,6 @@ def truy_van():
     # Ngat ket noi
     conn.close()
 def chinh_sua():
-    
-
     print("")
 
 
