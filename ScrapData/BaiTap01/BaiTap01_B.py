@@ -11,7 +11,7 @@ c = conn.cursor()
 try:
     c.execute('''
         CREATE TABLE Musicians (
-            id integer primary key autoincrement,
+            Id integer primary key autoincrement,
             Name text,
             YearActive Integer
         )
@@ -64,6 +64,7 @@ links = [tag.find_element(By.TAG_NAME, "a").get_attribute("href")for tag in tags
 url2 = driver.get(links[0])
 time.sleep(5)
 # print(driver.get(links[0]))
+
 "Tim tat ca the ul"
 tags_ul = driver.find_elements(By.TAG_NAME, "ul")
 
@@ -80,43 +81,24 @@ links = [tag.find_element(By.TAG_NAME, "a").get_attribute("href")for tag in tags
 titles = [tag.find_element(By.TAG_NAME, "a").get_attribute("title")for tag in tags_li]
 
 for link in links:
-    # print(link)0
+    # print(link)
     driver.get(link)
 
     "Lay ten"
     try:
-        # Name_element = driver.find_element(By.XPATH, "//h1[span[text()]]")
         Name_element = driver.find_element(By.XPATH, "//h1[@id='firstHeading']//span[@class='mw-page-title-main']")
         Name = Name_element.text
-    except:
-        ""
+    except Exception as e:
+        print(e)
 
     "Lay ngay hoat dong"
     try:
         Year_active_element = driver.find_element(By.XPATH,
                                                   """//th[span[contains(text(), 'Years active')]]/following-sibling::td""")
-        # Year_active_element = driver.find_element(By.XPATH, "//td[contains(text(), '1965–1969, 1973, 1984, 2015')]")
         YearActive = Year_active_element.text
-    except:
-        ""
+    except Exception as e:
+        print(e)
+        
     them(Name, YearActive)
-
-    "Tao dictionary thong tin nhac si"
-
-    # musician_dict = {"Name": Name, "Year active": YearActive}
-    # musician_df = pd.DataFrame([musician_dict])
-    # print(musician_df)
-
-    "Them thong tin vao dataframe"
-    # d = pd.concat([d, musician_df], ignore_index=True)
-# print(d)
-
-# # determining the name of the file
-# file_name = 'Musicians.xlsx'
-
-# # saving the Excel
-# d.to_excel(file_name)
-# print('DataFrame is written to Excel File successfully.')
-
 time.sleep(4)
 driver.quit()

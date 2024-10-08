@@ -50,12 +50,12 @@ links = [tag.find_element(By.TAG_NAME, "a").get_attribute("href")for tag in tags
 titles = [tag.find_element(By.TAG_NAME, "a").get_attribute("title")for tag in tags_li]
 
 for link in links:
-    # print(link)0
+    # print(link)
     driver.get(link)
+    time.sleep(0.7)
 
     "Lay ten"
     try:
-        # Name_element = driver.find_element(By.XPATH, "//h1[span[text()]]")
         Name_element = driver.find_element(By.XPATH, "//h1[@id='firstHeading']//span[@class='mw-page-title-main']")
         Name = Name_element.text
     except:
@@ -65,7 +65,6 @@ for link in links:
     try:
         Year_active_element = driver.find_element(By.XPATH,
                                                   """//th[span[contains(text(), 'Years active')]]/following-sibling::td""")
-        # Year_active_element = driver.find_element(By.XPATH, "//td[contains(text(), '1965–1969, 1973, 1984, 2015')]")
         YearActive = Year_active_element.text
     except:
         ""

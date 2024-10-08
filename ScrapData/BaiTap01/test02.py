@@ -25,7 +25,7 @@ except Exception as e:
     print(e)
 
 def them(name, birth, death, nationality):
-    conn = sqlite3.connect('MUSICIANS.db')
+    conn = sqlite3.connect('painters.db')
     c = conn.cursor()
     # Them vao co so du lieu
     c.execute('''
