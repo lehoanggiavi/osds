@@ -12,19 +12,22 @@ root.geometry("600x800")
 conn = sqlite3.connect('address_book.db')
 c = conn.cursor()
 
-# # Tao bang de luu tru
-# c.execute('''
-#     CREATE TABLE addresses(
-#         id INTEGER PRIMARY KEY AUTOINCREMENT,
-#         first_name text,
-#         last_name text,
-#         address text,
-#         city text,
-#         state text,
-#         zipcode interger
-#     )
-# '''
-# )
+# Tao bang de luu tru
+try:
+    c.execute('''
+        CREATE TABLE addresses(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            first_name text,
+            last_name text,
+            address text,
+            city text,
+            state text,
+            zipcode interger
+        )
+    '''
+    )
+except Exception as e:
+    print(e)
 
 def them():
     # Kết nối và lấy dữ liệu
@@ -64,7 +67,7 @@ def them():
     zipcode.delete(0, END)
 
     # Hien thi lai du lieu
-    truy_van()
+    # truy_van()
 
 def xoa():
     # Kết nối tới db
@@ -74,8 +77,8 @@ def xoa():
     c.execute("""
     Delete from addresses 
     Where id = :id
-    """, {'id': delete_box.get()})
-    delete_box.delete(0, END)
+    """, {'id': enter_box.get()})
+    enter_box.delete(0, END)
     conn.commit()
     conn.close()
 
@@ -149,14 +152,18 @@ button_frame.pack(pady=10)
 # Các nút chức năng
 submit_btn = Button(button_frame, text="Thêm bản ghi", command=them)
 submit_btn.grid(row=0, column=0, columnspan=2, pady=10, padx=10, ipadx=100)
+
 query_btn = Button(button_frame, text="Hiển thị bản ghi", command=truy_van)
 query_btn.grid(row=1, column=0, columnspan=2, pady=10, padx=10, ipadx=137)
-delete_box_label = Label(button_frame, text="Chọn ID")
-delete_box_label.grid(row=2, column=0, pady=5)
-delete_box = Entry(button_frame, width=30)
-delete_box.grid(row=2, column=1, pady=5)
+
+enter_box_label = Label(button_frame, text="Chọn ID")
+enter_box_label.grid(row=2, column=0, pady=5)
+enter_box = Entry(button_frame, width=30)
+enter_box.grid(row=2, column=1, pady=5)
+
 delete_btn = Button(button_frame, text="Xóa bản ghi", command=xoa)
 delete_btn.grid(row=3, column=0, columnspan=2, pady=10, padx=10, ipadx=136)
+
 edit_btn = Button(button_frame, text="Chỉnh sửa bản ghi", command=chinh_sua)
 edit_btn.grid(row=4, column=0, columnspan=2, pady=10, padx=10, ipadx=125)
 
@@ -167,12 +174,11 @@ tree_frame.pack(pady=10)
 # Treeview để hiển thị bản ghi
 columns = ("ID", "Họ", "Tên")
 tree = ttk.Treeview(tree_frame, columns=columns, show="headings", height=15)
-tree.pack()
-
 # Định nghĩa tiêu đề cho các cột
 for col in columns:
+    tree.column(col, anchor=CENTER)
     tree.heading(col, text=col)
-
+tree.pack()
 # Gọi hàm truy vấn để hiển thị bản ghi khi khởi động
 truy_van()
 
