@@ -1,0 +1,13 @@
+# Step 1: Connect to MongoDB
+client = MongoClient('mongodb://localhost:27017/')
+
+# Step 2: Choose the database you want to delete collections from
+db = client['tiktokABC']  # Replace 'tiktokABC' with your database name
+
+# Step 3: Get a list of all collections in the database
+collections = db.list_collection_names()
+
+# Step 4: Drop each collection
+for collection_name in collections:
+    db.drop_collection(collection_name)
+    print(f"Collection {collection_name} dropped.")

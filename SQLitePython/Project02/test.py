@@ -30,85 +30,16 @@ except Exception as e:
     print(e)
 
 def them():
-    # Kết nối và lấy dữ liệu
-    conn = sqlite3.connect('address_book.db')
-    c = conn.cursor()
-    # Lấy dữ liệu đã nhập
-    name_value =f_name.get()
-    lastName_value = l_name.get()
-    address_value = address.get()
-    city_value = city.get()
-    state_value = state.get()
-    zipcode_value = zipcode.get()
-    # Thực hiện câu lệnh để thêm
-    c.execute('''
-        INSERT INTO 
-        addresses (first_name, last_name, address, city, state, zipcode)
-        VALUES 
-        (:name, :last_name, :address,:city, :state, :zipcode)
-    ''',{
-        'name' : name_value,
-        'last_name' : lastName_value,
-        'address': address_value,
-        'city': city_value,
-        'state': state_value,
-        'zipcode': zipcode_value,
-      }
-    )
-    conn.commit()
-    conn.close()
-
-    # Reset form
-    f_name.delete(0, END)
-    l_name.delete(0, END)
-    address.delete(0, END)
-    city.delete(0, END)
-    state.delete(0, END)
-    zipcode.delete(0, END)
-
-    # Hien thi lai du lieu
-    # truy_van()
+    print("")
 
 def xoa():
-    # Kết nối tới db
-    conn = sqlite3.connect('address_book.db')
-    c = conn.cursor()
-
-    c.execute("""
-    Delete from addresses 
-    Where id = :id
-    """, {'id': enter_box.get()})
-    enter_box.delete(0, END)
-    conn.commit()
-    conn.close()
-
-    # Hien thi thong bao
-    messagebox.showinfo("Thong Bao ", "Da Xoa!")
-
-    # Hien thi lai du lieu
-    truy_van()
-    # print("")
+    print("")
 
 def cap_nhat():
     print("")
 
 def truy_van():
-    # Xóa đi các dữ liệu trong TreeView
-    for row in tree.get_children():
-        tree.delete(row)
-
-    # Kết nối và lấy dữ liệu
-    conn = sqlite3.connect('address_book.db')
-    c = conn.cursor()
-    c.execute("SELECT * FROM addresses")
-    records = c.fetchall()
-
-    # Hien thi du lieu
-    for r in records:
-        tree.insert("", END, values=(r[0], r[1], r[2]))
-
-    # Ngat ket noi
-    conn.close()
+    print("")
 def chinh_sua():
     print("")
 
