@@ -40,7 +40,7 @@ url2 = 'https://www.reddit.com/r/funny/submit/?type=TEXT'
 driver.get(url2)
 time.sleep(5)
 
-for i in range(17):
+for i in range(16):
     actionChains.key_down(Keys.TAB).perform()
     time.sleep(1)
 

@@ -13,7 +13,8 @@ import pandas as pd
 import getpass
 
 
-gecko_path = "E:\OSDS\osds\BTScrapDaTa02\geckodriver.exe"
+# gecko_path = "E:\OSDS\osds\BTScrapDaTa02\geckodriver.exe"
+gecko_path = "E:/OSDS/osds/geckodriver.exe"
 # Khởi tởi đối tượng dịch vụ với đường geckodriver
 ser = Service(gecko_path)
 
@@ -22,6 +23,7 @@ options = webdriver.firefox.options.Options()
 options.binary_location = "C:/Program Files/Mozilla Firefox/firefox.exe"
 # Thiết lập firefox chỉ hiện thị giao diện
 options.headless = False
+
 
 # Khởi tạo driver
 driver = webdriver.Firefox(options=options, service=ser)

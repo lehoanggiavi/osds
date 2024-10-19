@@ -10,7 +10,7 @@ import pandas as pd
 
 
 
-gecko_path = "E:\OSDS\osds\BTScrapDaTa02\geckodriver.exe"
+gecko_path = "E:/OSDS/osds/geckodriver.exe"
 # Khởi tởi đối tượng dịch vụ với đường geckodriver
 ser = Service(gecko_path)
 
@@ -41,7 +41,7 @@ lastname_input.send_keys("Le Hoang")
 
 time.sleep(2)
 
-button = driver.find_element(By.XPATH, "//input[@type='submit']")
+button = driver.find_element(By.XPATH, "//input[@id='submit']")
 button.click()
 time.sleep(5)
 
