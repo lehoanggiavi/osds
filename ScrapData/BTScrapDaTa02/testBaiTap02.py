@@ -10,18 +10,22 @@ import pandas as pd
 
 
 
-gecko_path = "E:/OSDS/osds/geckodriver.exe"
-# Khởi tởi đối tượng dịch vụ với đường geckodriver
-ser = Service(gecko_path)
+# gecko_path = "E:/OSDS/osds/geckodriver.exe"
+# # Khởi tởi đối tượng dịch vụ với đường geckodriver
+# ser = Service(gecko_path)
 
-# Tạo tùy chọn
-options = webdriver.firefox.options.Options()
-options.binary_location = "C:/Program Files/Mozilla Firefox/firefox.exe"
-# Thiết lập firefox chỉ hiện thị giao diện
-options.headless = False
+# # Tạo tùy chọn
+# options = webdriver.firefox.options.Options()
+# options.binary_location = "C:/Program Files/Mozilla Firefox/firefox.exe"
+# # Thiết lập firefox chỉ hiện thị giao diện
+# options.headless = False
 
-# Khởi tạo driver
-driver = webdriver.Firefox(options = options, service=ser)
+# # Khởi tạo driver
+# driver = webdriver.Firefox(options = options, service=ser)
+
+# Dung trinh duyet Chrome
+driver = webdriver.Chrome()
+
 
 # Tạo url
 url = 'https://nhathuoclongchau.com.vn/thuc-pham-chuc-nang/vitamin-khoang-chat'
@@ -37,11 +41,20 @@ body = driver.find_element(By.TAG_NAME, "body")
 # print(driver.page_source)
 
 
+# Lay them san pham
+for _ in range(5):
+    try:
+        button_xemthem = driver.find_element(By.XPATH, "//div[@class='px-4 pt-3 md:px-0 md:pt-0']//span[contains(text(), 'Xem thêm')]")
+        button_xemthem.click()
+        time.sleep(3)
+    except Exception as e:
+        print(f"Loi {e}")
+
+
 # Lazy loading
-for i in range (30):
+for i in range (40):
     body.send_keys(Keys.ARROW_DOWN)
     time.sleep(0.2)
-
 
 # Tao ra cac ds de luu
 stt=[]
@@ -74,14 +87,30 @@ for i, div in enumerate(divs, 1):
     if len(tsp)>0:
         stt.append(i)
 
-print(stt)
-print("################################")
+# print(stt)
+# print("################################")
 
-print(ten_san_pham)
-print("################################")
+# print(ten_san_pham)
+# print("################################")
 
-print(gia_ban)
-print("################################")
+# print(gia_ban)
+# print("################################")
 
-print(hinh_anh)
-print("################################")
+# print(hinh_anh)
+# print("################################")
+
+
+# Tao ra 1 df
+df = pd.DataFrame({
+    "STT" : stt,
+    "Ten San Pham" : ten_san_pham,
+    "Gia Ban" : gia_ban,
+    "Hinh Anh" : hinh_anh
+})
+
+print(df)
+
+try:
+    df.to_excel("Danh_sach_sp.xlsx", index=False)
+except Exception as e:
+    print(f"Loi {e}")
