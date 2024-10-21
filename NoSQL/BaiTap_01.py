@@ -44,5 +44,4 @@ print("Nguoi dung co Video co nhieu luot xem nhat")
 user_videos = videos_collection.find({"user_id":1})
 # for video in user_videos:
 #     print(video) 
-    
 # print(video)

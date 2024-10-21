@@ -1,0 +1,27 @@
+•	Dưới đây là một số gợi ý đề tài nghiên cứu có thể thực hiện với dữ liệu của sinh viên tại một trường đại học công nghệ, dựa trên dữ liệu từ mạng xã hội (Facebook) hoặc lượt truy cập trên website của trường:
+1. Phân tích cảm xúc của sinh viên về các chủ đề học thuật thông qua bình luận trên Facebook
+•	Mô tả: Nghiên cứu các chủ đề liên quan đến học thuật (các khóa học, giáo trình, sự kiện...) qua bình luận và phản hồi của sinh viên trên Facebook. Sử dụng các kỹ thuật phân tích cảm xúc (Sentiment Analysis) để xác định tâm trạng và ý kiến của sinh viên.
+•	Mục tiêu: Xác định các yếu tố mà sinh viên cảm thấy hài lòng hoặc không hài lòng về quá trình học tập và hoạt động tại trường.
+•	Phương pháp: Thu thập dữ liệu từ các bình luận, phân loại các bình luận theo cảm xúc tích cực, tiêu cực, trung lập, từ đó rút ra những xu hướng chung.
+2. Tác động của việc thả "reaction" (like, love, care...) đến mức độ tương tác của bài đăng
+•	Mô tả: Nghiên cứu về sự tương quan giữa số lượng "reaction" trên các bài viết của trường (trên Facebook hoặc các nền tảng khác) với lượt tương tác tiếp theo như bình luận, chia sẻ, hoặc lượt truy cập vào bài viết liên quan.
+•	Mục tiêu: Đánh giá xem các bài viết có nhiều reaction hơn liệu có tạo ra sự tương tác sâu hơn, qua đó có thể đưa ra chiến lược đăng bài hiệu quả hơn.
+•	Phương pháp: Thu thập số liệu từ các bài đăng, áp dụng phương pháp phân tích tương quan, hồi quy để đánh giá tác động của từng loại reaction.
+3. Phân tích hành vi truy cập website của sinh viên theo thời gian
+•	Mô tả: Phân tích lượt truy cập vào các bài viết hoặc trang thông tin trên website của trường, đặc biệt vào các giai đoạn khác nhau trong năm học (kỳ thi, đăng ký môn học, tuyển sinh...).
+•	Mục tiêu: Xác định các thời điểm sinh viên quan tâm đến website nhiều nhất và các nội dung được truy cập nhiều nhất. Qua đó, tối ưu hóa thời gian đăng tải thông tin và chiến lược nội dung.
+•	Phương pháp: Sử dụng dữ liệu từ Google Analytics hoặc các công cụ theo dõi truy cập website để thu thập thông tin về lượt truy cập theo thời gian.
+4. Dự đoán mức độ thành công của bài viết trên Facebook dựa trên số lượt tương tác ban đầu
+•	Mô tả: Nghiên cứu khả năng dự đoán mức độ thành công (nhiều lượt tương tác, chia sẻ) của một bài viết trên Facebook dựa trên số lượt thả tim, like, comment trong giờ đầu tiên sau khi đăng.
+•	Mục tiêu: Phát triển một mô hình dự đoán dựa trên dữ liệu thô từ các bài đăng trong quá khứ.
+•	Phương pháp: Thu thập dữ liệu từ các bài đăng, sử dụng các thuật toán học máy (machine learning) để xây dựng mô hình dự đoán.
+5. Phân tích sự thay đổi hành vi tương tác của sinh viên theo mùa sự kiện trong năm học
+•	Mô tả: So sánh mức độ tương tác (like, share, comment) của sinh viên trên các bài viết liên quan đến các sự kiện khác nhau trong năm học (tuyển sinh, ngày hội việc làm, lễ tốt nghiệp, các sự kiện thể thao).
+•	Mục tiêu: Tìm hiểu xem các mùa sự kiện có ảnh hưởng như thế nào đến hành vi tương tác của sinh viên và xác định các yếu tố thúc đẩy sự tương tác.
+•	Phương pháp: Thu thập dữ liệu theo mùa, phân tích thống kê để tìm ra các mối quan hệ.
+6. Xác định các yếu tố ảnh hưởng đến việc chia sẻ bài viết của trường trên Facebook
+•	Mô tả: Nghiên cứu các yếu tố như nội dung bài viết, hình ảnh/video kèm theo, thời gian đăng, số lượng tương tác ban đầu... ảnh hưởng như thế nào đến việc sinh viên chia sẻ bài viết của trường.
+•	Mục tiêu: Tìm hiểu những yếu tố nào làm tăng khả năng một bài viết được chia sẻ rộng rãi trong cộng đồng sinh viên.
+•	Phương pháp: Sử dụng phương pháp phân tích hồi quy logistic để tìm hiểu mối quan hệ giữa các yếu tố và hành vi chia sẻ bài viết.
+•	Những đề tài này có tiềm năng cung cấp nhiều insight hữu ích cho nhà trường về hành vi và cảm xúc của sinh viên, cũng như giúp tối ưu hóa chiến lược truyền thông số của trường.
+
