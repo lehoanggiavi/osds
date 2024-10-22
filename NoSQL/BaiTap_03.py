@@ -49,3 +49,39 @@ print("Thong ke so luong tep theo chu so huu")
 update =files_collection.update_one({ 'file_id': 1 }, { '$set': { 'shared': 'true' } })
 
 print(update)
+
+#lab6
+# Tìm tất cả tệp của người dùng có tên là "Nguyen Van A".
+print('tất cả tệp của người dùng có tên là "Nguyen Van A": ')
+name = files_collection.find({'owner':"Nguyen Van A" })
+for owner in name:
+    print(owner)
+
+# Tìm tệp lớn nhất trong bộ sưu tập.
+print('tệp lớn nhất trong bộ sưu tập: ')
+size_file = files_collection.find().sort('size', -1).limit(1)
+for y in size_file:
+    print(y)
+
+# Tìm số lượng tệp có kích thước nhỏ hơn 1000KB.
+print("tệp có kích nhỏ hơn 1000KB: ")
+file_quality1 = files_collection.find({'size': {'$lt': 1000}})
+for t1 in file_quality1:
+    print(t1)
+# Tìm tất cả tệp được tạo trong tháng 1 năm 2024.
+print("Tìm tất cả tệp được tạo trong tháng 1 năm 2024: ")
+date_create = files_collection.find({'created_at': {'$gte': datetime(2024, 1, 1), '$lt': datetime(2024, 2, 1)}})
+for create in date_create:
+    print(create)
+
+# Cập nhật tên tệp với `file_id` là 4 thành "New Spreadsheet.xlsx"
+files_collection.update_one({'file_id': 4}, {'$set': {'name':"New Spreadsheet.xlsx" }})
+#  Xóa tất cả tệp có kích thước nhỏ hơn 1000KB.
+files_collection.delete_many({'size': {'$lt': 1000}})
+
+for update in files_collection.find():
+    print(update)
+
+print("\nDữ liệu video sau khi xóa:")
+for delete in files_collection.find():
+    print(delete)
