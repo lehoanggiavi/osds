@@ -52,22 +52,22 @@ def them():
         else:
             pass 
             
-        # Thực hiện câu lệnh để thêm
-        c.execute("""
-            INSERT INTO 
-            Sinh_Vien (masinhvien, ho, ten, malop, namnhaphoc, diemtb)
-            VALUES 
-            (:masinhvien, :ho, :ten, :malop, :namnhaphoc, :diemtb)
-        """,{
-            'masinhvien' : id_value,
-            'ho' : l_name_value,
-            'ten': f_name_value,
-            'malop': class_id_value,
-            'namnhaphoc': year_enroll_value,
-            'diemtb': average_value,
-        })
+            # Thực hiện câu lệnh để thêm
+            c.execute("""
+                INSERT INTO 
+                Sinh_Vien (masinhvien, ho, ten, malop, namnhaphoc, diemtb)
+                VALUES 
+                (:masinhvien, :ho, :ten, :malop, :namnhaphoc, :diemtb)
+            """,{
+                'masinhvien' : id_value,
+                'ho' : l_name_value,
+                'ten': f_name_value,
+                'malop': class_id_value,
+                'namnhaphoc': year_enroll_value,
+                'diemtb': average_value,
+            })
 
-        conn.commit()
+            conn.commit()
         conn.close()
 
         # Reset form

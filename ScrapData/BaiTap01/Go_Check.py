@@ -154,6 +154,7 @@ for div in divs:
         price_element = div.find_element(By.XPATH, ".//div[@class='box-pro-detail']//del").text
         prices.append(price_element)
     except Exception as e:
+        prices.append("N/A")
         print(f"Lỗi: {e}")
 
 # Tạo DataFrame để lưu dữ liệu
@@ -163,8 +164,8 @@ df = pd.DataFrame({
     "Tên Sản Phẩm": names_product,
     "Giá Sản Phẩm": prices
 })
-# In ra DataFrame
-print(df)
+
+
 try:
     # Lưu dữ liệu vào file Excel
     df.to_excel("San_Pham.xlsx", index=False)
@@ -172,3 +173,5 @@ except Exception as e:
     print(e)
 
 
+# In ra DataFrame
+print(df)
