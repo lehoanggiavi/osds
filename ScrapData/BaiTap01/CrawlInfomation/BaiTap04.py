@@ -10,7 +10,7 @@ conn = sqlite3.connect('MUSICIANS.db')
 c = conn.cursor()
 try:
     c.execute('''
-        CREATE TABLE Musicians (
+        Create Table Musicians (
             Id integer primary key autoincrement,
             Name text,
             YearActive Integer
@@ -24,8 +24,8 @@ def them(Name, YearActive):
     c = conn.cursor()
     # Them vao co so du lieu
     c.execute('''
-        INSERT INTO MUSICIANS(Name, YearActive)
-        VALUES (:Name, :YearActive)
+        Insert Into Musicians(Name, YearActive)
+        Values (:Name, :YearActive)
     ''',
       {
           'Name': Name,
